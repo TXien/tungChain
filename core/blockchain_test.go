@@ -191,6 +191,7 @@ func TestLastBlock(t *testing.T) {
 	if block.Hash() != GetHeadBlockHash(bchain.chainDb) {
 		t.Errorf("Write/Get HeadBlockHash failed")
 	}
+	
 }
 
 // Tests that given a starting canonical chain of a given size, it can be extended

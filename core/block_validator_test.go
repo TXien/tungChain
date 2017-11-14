@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"testing"
 	"time"
-
+"fmt"
 	"github.com/ethereum/go-ethereum/consensus/ethash"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/core/vm"
@@ -37,6 +37,7 @@ func TestHeaderVerification(t *testing.T) {
 		genesis   = gspec.MustCommit(testdb)
 		blocks, _ = GenerateChain(params.TestChainConfig, genesis, testdb, 8, nil)
 	)
+	fmt.Println(blocks)
 	headers := make([]*types.Header, len(blocks))
 	for i, block := range blocks {
 		headers[i] = block.Header()
